@@ -1,0 +1,5 @@
+http.host: "0.0.0.0"
+xpack.monitoring.elasticsearch.url: http://es_host:es_port
+xpack.monitoring.elasticsearch.username: es_usr
+xpack.monitoring.elasticsearch.password: es_pass
+xpack.monitoring.enabled: true

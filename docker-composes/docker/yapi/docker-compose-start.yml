@@ -1,0 +1,26 @@
+version: '2.0'
+services:
+  yapi:
+    image: registry.cn-hangzhou.aliyuncs.com/anoy/yapi
+    container_name: yapi
+    links:
+      - mongo:mongo
+    ports:
+      - 30001:3000
+    working_dir: /api/vendors
+    volumes:
+      - ./config.json:/api/config.json
+    entrypoint: npm
+    command:  run start
+    depends_on:
+      - mongo
+    restart: always
+  mongo:
+    image: mongo:3.4-xenial
+    container_name: yapi-mongo
+    volumes:
+      - ./data/:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=yapi
+      - MONGO_INITDB_ROOT_PASSWORD=yapi
+    restart: always

@@ -1,0 +1,23 @@
+{
+  "port": "3000",
+  "adminAccount": "wuchangyi@quannengkuaiche.com",
+  "versionNotify": true,
+  "db": {
+    "servername": "mongo",
+    "DATABASE": "yapi",
+    "port": 27017,
+    "user": "yapi",
+    "pass": "yapi",
+    "authSource": "admin"
+  },
+  "mail": {
+    "enable": true,
+    "host": "smtp.exmail.qq.com",
+    "port": 465,
+    "from": "wangmengmeng@quannengkuaiche.com",
+    "auth": {
+      "user": "wangmengmeng@quannengkuaiche.com",
+      "pass": "Qq6492178"
+    }
+  }
+}

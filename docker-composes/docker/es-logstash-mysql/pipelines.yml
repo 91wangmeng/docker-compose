@@ -1,0 +1,5 @@
+- pipeline.id: sync_table_1
+  path.config: "/etc/logstash/pipeline/conf/sync_table_1.cfg"
+- pipeline.id: sync_table_2
+  path.config: "/etc/logstash/pipeline/conf/sync_table_2.cfg"
+

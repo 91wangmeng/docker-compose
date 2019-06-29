@@ -1,0 +1,18 @@
+version: '2.0'
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.3.2
+    container_name: logstash
+    volumes:
+      - ./pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./plugins/config/:/etc/logstash/pipeline/conf/
+      - ./plugins/lib/mysql-connector-java-6.0.6.jar:/mysql-connector-java-6.0.6.jar
+      - ./sync/:/usr/share/logstash/sync/:rw
+      -  /etc/localtime:/etc/localtime
+    environment:
+      - SET_CONTAINER_TIMEZONE=true
+      - CONTAINER_TIMEZONE=Asia/Shanghai
+    user: root
+    network_mode: host
+    privileged: true
